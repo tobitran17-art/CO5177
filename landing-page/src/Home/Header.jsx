@@ -1,17 +1,20 @@
-import React from 'react';
+import React from "react";
 
 const navItems = [
-  { title: 'Bài tập lớn', href: '#page1' },
-  { title: 'Công nghệ', href: '#page2' },
+  { title: "Bài tập lớn", href: "#page1" },
+  { title: "Công nghệ", href: "#page2" },
 ];
 
 const smallLinks = [
-  { title: 'Repository', href: 'https://github.com/tobitran17-art/CO5177', badge: 'MỚI' },
-  { title: 'GitHub', href: 'https://github.com/tobitran17-art' },
+  {
+    title: "Repository",
+    href: "https://github.com/tobitran17-art/CO5177",
+    badge: "MỚI",
+  },
 ];
 
-const REPO_LINK = 'https://github.com/tobitran17-art/CO5177';
-const ASSIGNMENT_PDF = 'assignment-vne-v4.pdf';
+const REPO_LINK = "https://github.com/tobitran17-art/CO5177";
+const ASSIGNMENT_PDF = "assignment-vne-v4.pdf";
 
 export default class Header extends React.PureComponent {
   state = {
@@ -19,11 +22,11 @@ export default class Header extends React.PureComponent {
   };
 
   componentDidMount() {
-    document.addEventListener('keydown', this.onKeyDown);
+    document.addEventListener("keydown", this.onKeyDown);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.onKeyDown);
+    document.removeEventListener("keydown", this.onKeyDown);
   }
 
   onKeyDown = (e) => {
@@ -33,7 +36,7 @@ export default class Header extends React.PureComponent {
   };
 
   toggle = () => {
-    this.setState(prevState => ({ active: !prevState.active }));
+    this.setState((prevState) => ({ active: !prevState.active }));
   };
 
   close = () => {
@@ -42,7 +45,7 @@ export default class Header extends React.PureComponent {
 
   render() {
     const { active } = this.state;
-    const status = active ? 'active' : 'not-active';
+    const status = active ? "active" : "not-active";
     return (
       <nav data-twostep-nav data-nav-status={status} className="twostep-nav">
         <div
@@ -58,7 +61,9 @@ export default class Header extends React.PureComponent {
                 <div className="twostep-nav__back-bg" />
               </div>
               <div className="twostep-nav__top">
-                <a href="#" className="twostep-nav__logo">T&amp;D</a>
+                <a href="#" className="twostep-nav__logo">
+                  T&amp;D
+                </a>
                 <button
                   type="button"
                   data-nav-toggle="toggle"
@@ -76,18 +81,23 @@ export default class Header extends React.PureComponent {
                     <div className="twostep-nav__bottom-row">
                       <div className="twostep-nav__bottom-col">
                         <div className="twostep-nav__info">
-                          <p className="twostep-nav__eyebrow">Điều hướng</p>
                           <ul className="twostep-nav__ul">
-                            {navItems.map(item => (
+                            {navItems.map((item) => (
                               <li className="twostep-nav__li" key={item.title}>
-                                <a href={item.href} className="twostep-nav__link" onClick={this.close}>
-                                  <span className="twostep-nav__link-span">{item.title}</span>
+                                <a
+                                  href={item.href}
+                                  className="twostep-nav__link"
+                                  onClick={this.close}
+                                >
+                                  <span className="twostep-nav__link-span">
+                                    {item.title}
+                                  </span>
                                 </a>
                               </li>
                             ))}
                           </ul>
                           <ul className="twostep-nav__ul is--small">
-                            {smallLinks.map(item => (
+                            {smallLinks.map((item) => (
                               <li className="twostep-nav__li" key={item.title}>
                                 <a
                                   href={item.href}
@@ -95,8 +105,14 @@ export default class Header extends React.PureComponent {
                                   rel="noopener noreferrer"
                                   className="twostep-nav__link"
                                 >
-                                  <span className="twostep-nav__link-eyebrow">{item.title}</span>
-                                  {item.badge && <span className="twostep-nav__badge">{item.badge}</span>}
+                                  <span className="twostep-nav__link-eyebrow">
+                                    {item.title}
+                                  </span>
+                                  {item.badge && (
+                                    <span className="twostep-nav__badge">
+                                      {item.badge}
+                                    </span>
+                                  )}
                                 </a>
                               </li>
                             ))}
@@ -105,9 +121,10 @@ export default class Header extends React.PureComponent {
                       </div>
                       <div className="twostep-nav__bottom-col is--visual">
                         <div className="twostep-nav__visual">
-                          <p className="twostep-nav__visual-eyebrow">Đề bài</p>
+                          {/* <p className="twostep-nav__visual-eyebrow">Đề bài</p> */}
                           <p className="twostep-nav__visual-title">
-                            Nền tảng lập trình cho phân tích và trực quan dữ liệu
+                            Nền tảng lập trình cho phân tích và trực quan dữ
+                            liệu
                           </p>
                           <a
                             href={ASSIGNMENT_PDF}
