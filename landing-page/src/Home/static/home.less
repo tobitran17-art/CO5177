@@ -29,90 +29,75 @@
   }
 }
 
-.banner-anim {
-  &-arrow {
-    opacity: 0;
-    transition: opacity .3s @ease-out;
-  }
-  &:hover {
-    .banner-anim-arrow {
-      opacity: 1;
-    }
-  }
-}
-
 .banner {
-  background: url(https://gw.alipayobjects.com/zos/rmsportal/okhVRKJXxQpbpKGtKneS.svg) no-repeat center top;
-  background-size: contain;
+  background: #f7f5f1;
   overflow: hidden;
-  padding-top: 64px;
+  padding: 160px 0 96px;
   font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   .page {
-    max-width: 1248px;
+    max-width: 1000px;
   }
   .logo {
     display: none;
   }
-  & &-anim {
-    margin: 0 auto 64px;
-    height: 600px;
-    box-shadow: 0 20px 32px rgba(1, 4, 8, .12);
-    background: #fff;
-    border-radius: 8px;
-    &-elem {
-      .banner-bg {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        overflow: hidden;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-    }
+}
+
+.hero {
+  &-title {
+    margin: 0;
+    font-size: 40px;
+    line-height: 1.3;
+    font-weight: 800;
+    color: #0d1a26;
+    max-width: 760px;
   }
-  .seeconf {
-    &-wrap {
-      text-align: center;
-      color: @banner-text-color;
-      .banner-button {
-        margin: 64px 0 26px;
-        .ant-btn {
-          height: 35px;
-          line-height: 35px;
-          border-radius: 35px;
-          background: #2354eb;
-          box-shadow: 0 7px 13px #91a5f2;
-          padding: 0 28px;
-          font-size: 12px;
-          a {
-            text-decoration: none;
-          }
-        }
-      }
+  &-info {
+    display: flex;
+    margin-top: 48px;
+    &-item {
+      margin-right: 96px;
     }
-    &-en-name {
-      margin: 140px 0 0;
+    &-label {
       font-size: 12px;
-      line-height: 32px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: #9a978f;
     }
-    &-title {
-      margin: 16px 0 24px;
-      font-size: 56px;
-      line-height: 68px;
-      text-indent: 2px;
-      font-weight: 600;
-      color: #02063D;
-    }
-    &-cn-name {
-      font-size: 18px;
+    &-value {
+      margin-top: 8px;
+      font-size: 15px;
+      color: #0d1a26;
     }
   }
-  &-button {
-    .ant-btn {
-      color: #fff;
-      border: none;
+  &-divider {
+    margin-top: 48px;
+    height: 1px;
+    background: rgba(13, 26, 38, .12);
+  }
+  &-members {
+    display: flex;
+    margin-top: 32px;
+    &-wrap {
+      display: flex;
+    }
+  }
+  &-member {
+    margin-right: 96px;
+    &-index {
+      font-size: 12px;
+      font-weight: 700;
+      color: #9a978f;
+    }
+    &-name {
+      margin-top: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #0d1a26;
+    }
+    &-mssv {
+      margin-top: 4px;
+      font-size: 13px;
+      color: #9a978f;
     }
   }
 }

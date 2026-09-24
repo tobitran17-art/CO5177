@@ -1,13 +1,5 @@
 export const header = [
   {
-    title: 'Trang chủ',
-    children: [
-      {
-        title: 'Trang giới thiệu nhóm T&D', desc: 'Nền tảng lập trình cho phân tích và trực quan dữ liệu', img: 'https://gw.alipayobjects.com/zos/rmsportal/fLPzRmwAurHkPDVfHHiQ.svg', link: '#',
-      },
-    ],
-  },
-  {
     title: 'Bài tập lớn',
     children: [
       {
@@ -32,34 +24,18 @@ export const header = [
       },
     ],
   },
-  {
-    title: 'Về nhóm',
-    children: [
-      {
-        title: 'Nhóm T&D', desc: 'Trần Hữu Anh Triết & Ngô Minh Đại', img: 'https://gw.alipayobjects.com/zos/rmsportal/VsVqfjYxPTJaFbPcZqMb.svg', link: '#footer',
-      },
-    ],
-  },
 ];
-export const banner = [
-  {
-    img: 'https://gw.alipayobjects.com/zos/rmsportal/cTyLQiaRrpzxFAuWwoDQ.svg',
-    imgMobile: 'https://gw.alipayobjects.com/zos/rmsportal/ksMYqrCyhwQNdBKReFIU.svg',
-    className: 'seeconf-wrap',
-    children: [
-      { children: 'Nền tảng lập trình cho phân tích và trực quan dữ liệu', className: 'seeconf-en-name' },
-      { children: 'Nhóm T&D', className: 'seeconf-title', tag: 'h1' },
-      { children: 'Trần Hữu Anh Triết & Ngô Minh Đại', className: 'seeconf-cn-name' },
-      {
-        children: 'Xem bài tập lớn',
-        className: 'banner-button',
-        tag: 'button',
-        link: '#page1',
-      },
-      { children: 'Đại học Bách Khoa – ĐHQG-HCM · Khoa Khoa học và Kỹ thuật Máy tính', className: 'seeconf-time' },
-    ],
-  },
-];
+export const hero = {
+  title: 'Nền tảng lập trình cho phân tích và trực quan dữ liệu',
+  info: [
+    { label: 'Trường', value: 'Đại học Bách Khoa – ĐHQG-HCM' },
+    { label: 'Giảng viên', value: 'Lê Thành Sách' },
+  ],
+  members: [
+    { name: 'Trần Hữu Anh Triết', mssv: '2470745' },
+    { name: 'Ngô Minh Đại', mssv: 'đang cập nhật' },
+  ],
+};
 export const page1 = {
   title: 'Các bài tập lớn con',
   children: [
