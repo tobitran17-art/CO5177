@@ -93,7 +93,7 @@ export default class Design extends React.PureComponent {
         </Col>);
     });
     return (
-      <div className="page-wrapper page1">
+      <div id="page1" className="page-wrapper page1">
         <div className="page">
           <h1>{page1.title}</h1>
           <i />

@@ -85,7 +85,7 @@ export default class Design extends React.PureComponent {
       );
     });
     return (
-      <div className="page-wrapper page2">
+      <div id="page2" className="page-wrapper page2">
         <div className="page">
           <h1>Công nghệ sử dụng</h1>
           <i />
