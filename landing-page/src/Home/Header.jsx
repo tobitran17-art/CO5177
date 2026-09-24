@@ -24,7 +24,14 @@ export default function Header(props) {
   return (
     <header {...props}>
       <Row className="nav">
-        {menuChild}
+        <Col span={6} className="header-logo">
+          <a href="#" className="header-logo-title">T&amp;D</a>
+        </Col>
+        <Col span={18}>
+          <Row>
+            {menuChild}
+          </Row>
+        </Col>
       </Row>
     </header>
   );

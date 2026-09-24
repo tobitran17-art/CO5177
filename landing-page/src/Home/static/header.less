@@ -4,9 +4,20 @@ header {
   width: 100%;
   z-index: 10;
   .nav {
-    max-width: 424px;
-    text-align: center;
+    max-width: 1200px;
     margin: auto;
+    padding: 0 24px;
+    .header-logo {
+      text-align: left;
+      &-title {
+        display: block;
+        padding-top: 22px;
+        color: #fff;
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+    }
     &-title {
       display: block;
       padding-top: 22px;
@@ -14,6 +25,7 @@ header {
       transition: border .3s @ease-out;
       color: #fff;
       cursor: pointer;
+      text-align: center;
       &:hover {
         border-top-color: #fff;
       }

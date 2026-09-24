@@ -49,7 +49,7 @@ export const banner = [
     children: [
       { children: 'Nền tảng lập trình cho phân tích và trực quan dữ liệu', className: 'seeconf-en-name' },
       { children: 'Nhóm T&D', className: 'seeconf-title', tag: 'h1' },
-      { children: 'Bài tập lớn môn học — Học kỳ 261, Năm học 2026–2027', className: 'seeconf-cn-name' },
+      { children: 'Trần Hữu Anh Triết & Ngô Minh Đại', className: 'seeconf-cn-name' },
       {
         children: 'Xem bài tập lớn',
         className: 'banner-button',
