@@ -75,8 +75,8 @@ export const footer = [
   {
     title: 'Thông tin nhóm — T&D',
     children: [
-      { title: 'Trần Hữu Anh Triết', desc: 'MSSV: 2470745', link: 'https://github.com/TrietTran1701' },
-      { title: 'Ngô Minh Đại', desc: 'MSSV: đang cập nhật', link: '#' },
+      { title: 'Trần Hữu Anh Triết', desc: '', link: 'https://github.com/TrietTran1701' },
+      { title: 'Ngô Minh Đại', desc: '', link: '#' },
     ],
   },
 ];

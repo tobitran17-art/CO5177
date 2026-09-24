@@ -1,4 +1,5 @@
 import React from 'react';
+import TweenOne from 'rc-tween-one';
 
 const navItems = [
   { title: 'Bài tập lớn', href: '#page1' },
@@ -6,6 +7,14 @@ const navItems = [
 ];
 
 const REPO_LINK = 'https://github.com/tobitran17-art/CO5177';
+
+// Scatter offsets each logo glyph starts from before gathering into place,
+// mirroring the Ant Motion "logo gather" entrance effect.
+const LOGO_GLYPHS = [
+  { text: 'T', from: { x: -60, y: -40, rotate: -35, opacity: 0 } },
+  { text: '&', from: { x: 0, y: 50, rotate: 25, opacity: 0 } },
+  { text: 'D', from: { x: 60, y: -40, rotate: 35, opacity: 0 } },
+];
 
 export default class Header extends React.PureComponent {
   state = {
@@ -48,7 +57,25 @@ export default class Header extends React.PureComponent {
         <div className="centered-nav">
           <div className="centered-nav__bg" />
           <div className="centered-nav__header">
-            <a href="#" className="centered-nav__logo">T&amp;D</a>
+            <a href="#" className="centered-nav__logo">
+              {LOGO_GLYPHS.map((glyph, i) => (
+                <TweenOne
+                  key={glyph.text}
+                  className="centered-nav__logo-glyph"
+                  animation={[
+                    { ...glyph.from, duration: 0 },
+                    {
+                      x: 0, y: 0, rotate: 0, opacity: 1,
+                      delay: 200 + i * 120,
+                      duration: 600,
+                      ease: 'easeOutBack',
+                    },
+                  ]}
+                >
+                  {glyph.text}
+                </TweenOne>
+              ))}
+            </a>
             <button
               type="button"
               data-navigation-toggle="toggle"
