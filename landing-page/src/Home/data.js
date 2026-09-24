@@ -11,13 +11,13 @@ export const header = [
     title: 'Bài tập lớn',
     children: [
       {
-        title: 'Tabular', desc: 'Dữ liệu bảng', img: 'https://gw.alipayobjects.com/zos/rmsportal/zMeJnhxAtpXPZAUhUKJH.svg', link: 'https://triettran1701.github.io/CO5177/tabular/',
+        title: 'Tabular', desc: 'Dữ liệu bảng', img: 'https://gw.alipayobjects.com/zos/rmsportal/zMeJnhxAtpXPZAUhUKJH.svg', link: 'https://tobitran17-art.github.io/CO5177/tabular/',
       },
       {
-        title: 'Text', desc: 'Dữ liệu văn bản', img: 'https://gw.alipayobjects.com/zos/rmsportal/qkNZxQRDqvFJscXVDmKp.svg', link: 'https://triettran1701.github.io/CO5177/text/',
+        title: 'Text', desc: 'Dữ liệu văn bản', img: 'https://gw.alipayobjects.com/zos/rmsportal/qkNZxQRDqvFJscXVDmKp.svg', link: 'https://tobitran17-art.github.io/CO5177/text/',
       },
       {
-        title: 'Time series', desc: 'Dữ liệu chuỗi thời gian', img: 'https://gw.alipayobjects.com/zos/rmsportal/MrUQjZNOJhYJCSZZuJDr.svg', link: 'https://triettran1701.github.io/CO5177/timeseries/',
+        title: 'Time series', desc: 'Dữ liệu chuỗi thời gian', img: 'https://gw.alipayobjects.com/zos/rmsportal/MrUQjZNOJhYJCSZZuJDr.svg', link: 'https://tobitran17-art.github.io/CO5177/timeseries/',
       },
     ],
   },
@@ -69,7 +69,7 @@ export const page1 = {
       src: require('./static/icons/tabular.svg'),
       color: '#1890FF',
       shadowColor: 'rgba(15, 93, 166, 0.08)',
-      link: 'https://triettran1701.github.io/CO5177/tabular/',
+      link: 'https://tobitran17-art.github.io/CO5177/tabular/',
     },
     {
       title: 'Text',
@@ -77,7 +77,7 @@ export const page1 = {
       src: require('./static/icons/text.svg'),
       color: '#EB2F96',
       shadowColor: 'rgba(166, 55, 112, 0.08)',
-      link: 'https://triettran1701.github.io/CO5177/text/',
+      link: 'https://tobitran17-art.github.io/CO5177/text/',
     },
     {
       title: 'Time series',
@@ -85,7 +85,7 @@ export const page1 = {
       src: require('./static/icons/timeseries.svg'),
       color: '#AB33F7',
       shadowColor: 'rgba(112, 73, 166, 0.08)',
-      link: 'https://triettran1701.github.io/CO5177/timeseries/',
+      link: 'https://tobitran17-art.github.io/CO5177/timeseries/',
     },
   ],
 };
@@ -110,15 +110,15 @@ export const footer = [
   {
     title: 'Bài tập lớn con',
     children: [
-      { title: 'Tabular', link: 'https://triettran1701.github.io/CO5177/tabular/' },
-      { title: 'Text', link: 'https://triettran1701.github.io/CO5177/text/' },
-      { title: 'Time series', link: 'https://triettran1701.github.io/CO5177/timeseries/' },
+      { title: 'Tabular', link: 'https://tobitran17-art.github.io/CO5177/tabular/' },
+      { title: 'Text', link: 'https://tobitran17-art.github.io/CO5177/text/' },
+      { title: 'Time series', link: 'https://tobitran17-art.github.io/CO5177/timeseries/' },
     ],
   },
   {
     title: 'Mã nguồn',
     children: [
-      { title: 'Repository GitHub của nhóm', link: 'https://github.com/TrietTran1701/CO5177' },
+      { title: 'Repository GitHub của nhóm', link: 'https://github.com/tobitran17-art/CO5177' },
     ],
   },
 ];
