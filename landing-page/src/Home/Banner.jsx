@@ -1,6 +1,5 @@
 import 'rc-banner-anim/assets/index.css';
 import React from 'react';
-import QueueAnim from 'rc-queue-anim';
 import BannerAnim from 'rc-banner-anim';
 import { banner, hero } from './data';
 
@@ -21,14 +20,9 @@ class Banner extends React.PureComponent {
                 className="banner-bg"
                 style={{ backgroundImage: `url(${isMobile ? banner.imgMobile : banner.img})` }}
               />
-              <QueueAnim
-                key="text"
-                className="hero-wrap"
-                ease={['easeOutCubic', 'easeInQuad']}
-                type="bottom"
-              >
-                <h1 key="title" className="hero-title">{hero.title}</h1>
-                <div key="info" className="hero-info">
+              <div className="hero-wrap">
+                <h1 className="hero-title">{hero.title}</h1>
+                <div className="hero-info">
                   {hero.info.map(item => (
                     <div className="hero-info-item" key={item.label}>
                       <div className="hero-info-label">{item.label.toUpperCase()}</div>
@@ -36,8 +30,8 @@ class Banner extends React.PureComponent {
                     </div>
                   ))}
                 </div>
-                <div key="divider" className="hero-divider" />
-                <div key="members" className="hero-members">
+                <div className="hero-divider" />
+                <div className="hero-members">
                   {hero.members.map((member, i) => (
                     <div className="hero-member" key={member.mssv}>
                       <div className="hero-member-index">{`0${i + 1}`}</div>
@@ -46,7 +40,7 @@ class Banner extends React.PureComponent {
                     </div>
                   ))}
                 </div>
-              </QueueAnim>
+              </div>
             </Element>
           </BannerAnim>
         </div>
