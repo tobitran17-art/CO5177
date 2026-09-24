@@ -42,7 +42,7 @@ export const hero = {
   ],
 };
 export const page1 = {
-  title: 'Các bài tập lớn',
+  title: 'Các bài tập',
   children: [
     {
       title: 'Tabular',
