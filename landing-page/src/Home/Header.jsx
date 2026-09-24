@@ -1,5 +1,4 @@
 import React from 'react';
-import TweenOne from 'rc-tween-one';
 
 const navItems = [
   { title: 'Bài tập lớn', href: '#page1' },
@@ -7,20 +6,12 @@ const navItems = [
 ];
 
 const smallLinks = [
-  { title: 'Repository', href: 'https://github.com/tobitran17-art/CO5177' },
+  { title: 'Repository', href: 'https://github.com/tobitran17-art/CO5177', badge: 'MỚI' },
   { title: 'GitHub', href: 'https://github.com/tobitran17-art' },
 ];
 
 const REPO_LINK = 'https://github.com/tobitran17-art/CO5177';
 const ASSIGNMENT_PDF = 'assignment-vne-v4.pdf';
-
-// Scatter offsets each logo glyph starts from before gathering into place,
-// mirroring the Ant Motion "logo gather" entrance effect.
-const LOGO_GLYPHS = [
-  { text: 'T', from: { x: -60, y: -40, rotate: -35, opacity: 0 } },
-  { text: '&', from: { x: 0, y: 50, rotate: 25, opacity: 0 } },
-  { text: 'D', from: { x: 60, y: -40, rotate: 35, opacity: 0 } },
-];
 
 export default class Header extends React.PureComponent {
   state = {
@@ -67,25 +58,7 @@ export default class Header extends React.PureComponent {
                 <div className="twostep-nav__back-bg" />
               </div>
               <div className="twostep-nav__top">
-                <a href="#" className="twostep-nav__logo">
-                  {LOGO_GLYPHS.map((glyph, i) => (
-                    <TweenOne
-                      key={glyph.text}
-                      className="twostep-nav__logo-glyph"
-                      animation={[
-                        { ...glyph.from, duration: 0 },
-                        {
-                          x: 0, y: 0, rotate: 0, opacity: 1,
-                          delay: 200 + i * 120,
-                          duration: 600,
-                          ease: 'easeOutBack',
-                        },
-                      ]}
-                    >
-                      {glyph.text}
-                    </TweenOne>
-                  ))}
-                </a>
+                <a href="#" className="twostep-nav__logo">T&amp;D</a>
                 <button
                   type="button"
                   data-nav-toggle="toggle"
@@ -103,6 +76,7 @@ export default class Header extends React.PureComponent {
                     <div className="twostep-nav__bottom-row">
                       <div className="twostep-nav__bottom-col">
                         <div className="twostep-nav__info">
+                          <p className="twostep-nav__eyebrow">Điều hướng</p>
                           <ul className="twostep-nav__ul">
                             {navItems.map(item => (
                               <li className="twostep-nav__li" key={item.title}>
@@ -122,6 +96,7 @@ export default class Header extends React.PureComponent {
                                   className="twostep-nav__link"
                                 >
                                   <span className="twostep-nav__link-eyebrow">{item.title}</span>
+                                  {item.badge && <span className="twostep-nav__badge">{item.badge}</span>}
                                 </a>
                               </li>
                             ))}

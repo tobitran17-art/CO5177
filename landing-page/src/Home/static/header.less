@@ -137,9 +137,6 @@
   font-weight: 700;
   letter-spacing: 1px;
   text-decoration: none;
-  &-glyph {
-    display: inline-block;
-  }
 }
 
 .twostep-nav__toggle {
@@ -255,6 +252,15 @@
   display: flex;
 }
 
+.twostep-nav__eyebrow {
+  margin: 0 0 .5em;
+  opacity: .55;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: .75em;
+  font-weight: 600;
+}
+
 .twostep-nav__ul {
   flex-flow: column;
   justify-content: flex-start;
@@ -264,33 +270,54 @@
   padding-left: 0;
   list-style: none;
   display: flex;
+  .twostep-nav__li {
+    border-top: 1px solid rgba(13, 26, 38, .1);
+    &:last-child {
+      border-bottom: 1px solid rgba(13, 26, 38, .1);
+    }
+  }
   &.is--small {
     flex-flow: row wrap;
-    gap: 1em;
+    gap: 1.25em;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
+    margin-top: 1.5em;
+    .twostep-nav__li {
+      border: none;
+      width: auto;
+      &:last-child {
+        border: none;
+      }
+    }
   }
 }
 
 .twostep-nav__link {
   color: inherit;
   width: 100%;
-  padding-top: .375em;
-  padding-bottom: .375em;
+  padding-top: .625em;
+  padding-bottom: .625em;
   text-decoration: none;
   position: relative;
   pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: .625em;
+  transition: opacity .15s;
+  &:hover {
+    opacity: .6;
+  }
 }
 
 .twostep-nav__link-span {
   letter-spacing: -.02em;
-  font-size: 2em;
+  font-size: 1.875em;
   font-weight: 700;
   line-height: 1;
 }
 
 .twostep-nav__link-eyebrow {
-  opacity: .6;
+  opacity: .55;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-size: .8125em;
@@ -298,8 +325,20 @@
   line-height: 1;
 }
 
+.twostep-nav__badge {
+  background: #1890ff;
+  color: #fff;
+  border-radius: .25em;
+  padding: .2em .5em;
+  font-size: .6875em;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
 .twostep-nav__info {
-  gap: 2em;
+  gap: 0;
   flex-flow: column;
   justify-content: space-between;
   align-items: flex-start;

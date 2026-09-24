@@ -13,9 +13,7 @@
     "rc-tween-one": "^1.5.5",
     "react": "^16.1.1",
     "react-document-title": "^2.0.3",
-    "react-dom": "^16.1.1",
-    "react-github-button": "^0.1.11",
-    "react-html5video": "^2.5.1"
+    "react-dom": "^16.1.1"
   },
   "devDependencies": {
     "atool-build": "^1.0.2",
