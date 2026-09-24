@@ -9,7 +9,7 @@ export default function Footer() {
         <Row>
           {
         footer.map((foot, index) => (
-          <Col key={index.toString()} md={6} xs={24} className="footer-item-col">
+          <Col key={index.toString()} md={12} xs={24} className="footer-item-col">
             <div className="footer-item">
               <h2>
                 {foot.icon && <img style={{ marginRight: 16 }} src={foot.icon} alt="img" />}

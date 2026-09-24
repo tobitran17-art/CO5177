@@ -73,33 +73,10 @@ export const page1 = {
 
 export const footer = [
   {
-    title: 'Thông tin môn học',
-    children: [
-      { title: 'Trường Đại học Bách Khoa – ĐHQG-HCM', link: '#' },
-      { title: 'Khoa Khoa học và Kỹ thuật Máy tính', link: '#' },
-      { title: 'Nền tảng lập trình cho phân tích và trực quan dữ liệu', link: '#' },
-      { title: 'Giảng viên: Lê Thành Sách', link: '#' },
-    ],
-  },
-  {
     title: 'Thông tin nhóm — T&D',
     children: [
       { title: 'Trần Hữu Anh Triết', desc: 'MSSV: 2470745', link: 'https://github.com/TrietTran1701' },
       { title: 'Ngô Minh Đại', desc: 'MSSV: đang cập nhật', link: '#' },
-    ],
-  },
-  {
-    title: 'Bài tập lớn con',
-    children: [
-      { title: 'Tabular', link: 'https://tobitran17-art.github.io/CO5177/tabular/' },
-      { title: 'Text', link: 'https://tobitran17-art.github.io/CO5177/text/' },
-      { title: 'Time series', link: 'https://tobitran17-art.github.io/CO5177/timeseries/' },
-    ],
-  },
-  {
-    title: 'Mã nguồn',
-    children: [
-      { title: 'Repository GitHub của nhóm', link: 'https://github.com/tobitran17-art/CO5177' },
     ],
   },
 ];
