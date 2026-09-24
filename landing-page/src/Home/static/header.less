@@ -1,8 +1,11 @@
 @import './default';
 header {
-  position: absolute;
+  position: fixed;
+  top: 0;
   width: 100%;
   z-index: 10;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
   .nav {
     max-width: 1200px;
     margin: auto;
@@ -11,8 +14,8 @@ header {
       text-align: left;
       &-title {
         display: block;
-        padding-top: 22px;
-        color: #fff;
+        padding: 18px 0;
+        color: #0d1a26;
         font-size: 22px;
         font-weight: 700;
         letter-spacing: 1px;
@@ -23,11 +26,12 @@ header {
       padding-top: 22px;
       border-top: 2px solid transparent;
       transition: border .3s @ease-out;
-      color: #fff;
+      color: #0d1a26;
       cursor: pointer;
       text-align: center;
       &:hover {
-        border-top-color: #fff;
+        color: #1890ff;
+        border-top-color: #1890ff;
       }
     }
   }
