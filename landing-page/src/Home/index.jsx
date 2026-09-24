@@ -34,7 +34,7 @@ class Home extends React.PureComponent {
   render() {
     return (
       [
-        <Header key="header" className={this.state.showShadow ? 'show-shadow' : ''} />,
+        <Header key="header" />,
         <Banner key="banner" isMobile={this.state.isMobile} navToShadow={this.navToShadow} />,
         <Page1 key="page1" isMobile={this.state.isMobile} />,
         <Page2 key="page2" isMobile={this.state.isMobile} />,

@@ -37,8 +37,8 @@ export const hero = {
     { label: 'Giảng viên', value: 'Lê Thành Sách' },
   ],
   members: [
-    { name: 'Trần Hữu Anh Triết', mssv: '2470745' },
-    { name: 'Ngô Minh Đại', mssv: 'đang cập nhật' },
+    { name: 'Trần Hữu Anh Triết', mssv: '' },
+    { name: 'Ngô Minh Đại', mssv: '' },
   ],
 };
 export const page1 = {
