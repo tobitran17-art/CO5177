@@ -25,6 +25,11 @@ export const header = [
     ],
   },
 ];
+export const banner = {
+  img: 'https://gw.alipayobjects.com/zos/rmsportal/cTyLQiaRrpzxFAuWwoDQ.svg',
+  imgMobile: 'https://gw.alipayobjects.com/zos/rmsportal/ksMYqrCyhwQNdBKReFIU.svg',
+};
+
 export const hero = {
   title: 'Nền tảng lập trình cho phân tích và trực quan dữ liệu',
   info: [
