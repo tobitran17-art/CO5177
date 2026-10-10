@@ -9,3 +9,5 @@ function copy(src, dest) {
 copy('index.html', path.join('dist', 'index.html'));
 copy('assignment-vne-v4.pdf', path.join('dist', 'assignment-vne-v4.pdf'));
 copy(path.join('tabular', 'index.html'), path.join('dist', 'tabular', 'index.html'));
+copy(path.join('text', 'index.html'), path.join('dist', 'text', 'index.html'));
+copy(path.join('image', 'index.html'), path.join('dist', 'image', 'index.html'));

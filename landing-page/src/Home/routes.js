@@ -50,5 +50,5 @@ export function isAppLink(href) {
     return false;
   }
   const route = routeFromPath(url.pathname);
-  return route === '/' || route === '/tabular';
+  return route === '/' || route === '/tabular' || route === '/text' || route === '/image';
 }

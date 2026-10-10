@@ -3,12 +3,28 @@ import rolesFigure from '../reports/figures/01-roles.png';
 import missingFigure from '../reports/figures/02-missing.png';
 import labelsFigure from '../reports/figures/03-labels.png';
 import patientsFigure from '../reports/figures/04-patients.png';
+import textBalance from '../reports/figures/text-01-balance.png';
+import textLength from '../reports/figures/text-02-length.png';
+import textTerms from '../reports/figures/text-03-terms.png';
+import textWordcloud from '../reports/figures/text-04-wordcloud.png';
+import imageAttrs from '../reports/figures/image-01-attrs.png';
+import imageStampQr from '../reports/figures/image-02-stamp-qr.png';
+import imageLayout from '../reports/figures/image-03-layout.png';
+import imageBlocks from '../reports/figures/image-04-blocks.png';
 
 const figures = {
   'figures/01-roles.png': rolesFigure,
   'figures/02-missing.png': missingFigure,
   'figures/03-labels.png': labelsFigure,
   'figures/04-patients.png': patientsFigure,
+  'figures/text-01-balance.png': textBalance,
+  'figures/text-02-length.png': textLength,
+  'figures/text-03-terms.png': textTerms,
+  'figures/text-04-wordcloud.png': textWordcloud,
+  'figures/image-01-attrs.png': imageAttrs,
+  'figures/image-02-stamp-qr.png': imageStampQr,
+  'figures/image-03-layout.png': imageLayout,
+  'figures/image-04-blocks.png': imageBlocks,
 };
 
 function parseInline(text, keyPrefix) {

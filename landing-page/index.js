@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from './src/Home';
 import TabularReport from './src/Home/TabularReport';
+import TextReport from './src/Home/TextReport';
+import ImageReport from './src/Home/ImageReport';
 import { currentRoute, isAppLink } from './src/Home/routes';
 
 class App extends React.Component {
@@ -56,6 +58,12 @@ class App extends React.Component {
   render() {
     if (this.state.route === '/tabular') {
       return <TabularReport />;
+    }
+    if (this.state.route === '/text') {
+      return <TextReport />;
+    }
+    if (this.state.route === '/image') {
+      return <ImageReport />;
     }
     return <Home />;
   }
