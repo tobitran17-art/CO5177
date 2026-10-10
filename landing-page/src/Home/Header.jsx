@@ -1,8 +1,9 @@
 import React from "react";
+import { appHref } from "./routes";
 
 const navItems = [
-  { title: "Bài tập lớn", href: "#page1" },
-  { title: "Công nghệ", href: "#page2" },
+  { title: "Bài tập lớn", href: `${appHref("/")}#page1` },
+  { title: "Công nghệ", href: `${appHref("/")}#page2` },
 ];
 
 const smallLinks = [
@@ -35,7 +36,7 @@ const GitHubIcon = () => (
 );
 
 const REPO_LINK = "https://github.com/tobitran17-art/CO5177";
-const ASSIGNMENT_PDF = "assignment-vne-v4.pdf";
+const ASSIGNMENT_PDF = appHref("/assignment-vne-v4.pdf");
 
 export default class Header extends React.PureComponent {
   state = {
@@ -82,7 +83,7 @@ export default class Header extends React.PureComponent {
                 <div className="twostep-nav__back-bg" />
               </div>
               <div className="twostep-nav__top">
-                <a href="#" className="twostep-nav__logo">
+                <a href={appHref("/")} className="twostep-nav__logo">
                   T&amp;D
                 </a>
                 <button

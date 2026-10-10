@@ -1,9 +1,11 @@
+import { appHref } from './routes';
+
 export const header = [
   {
     title: 'Bài tập lớn',
     children: [
       {
-        title: 'Tabular', desc: 'Dữ liệu bảng', img: 'https://gw.alipayobjects.com/zos/rmsportal/zMeJnhxAtpXPZAUhUKJH.svg', link: 'https://tobitran17-art.github.io/CO5177/tabular/',
+        title: 'Tabular', desc: 'Dữ liệu bảng', img: 'https://gw.alipayobjects.com/zos/rmsportal/zMeJnhxAtpXPZAUhUKJH.svg', link: appHref('/tabular/'),
       },
       {
         title: 'Text', desc: 'Dữ liệu văn bản', img: 'https://gw.alipayobjects.com/zos/rmsportal/qkNZxQRDqvFJscXVDmKp.svg', link: 'https://tobitran17-art.github.io/CO5177/text/',
@@ -37,8 +39,8 @@ export const hero = {
     { label: 'Giảng viên', value: 'Lê Thành Sách' },
   ],
   members: [
-    { name: 'Trần Hữu Anh Triết', mssv: '' },
-    { name: 'Ngô Minh Đại', mssv: '' },
+    { name: 'Trần Hữu Anh Triết', mssv: '2470745' },
+    { name: 'Ngô Minh Đại', mssv: '2470722' },
   ],
 };
 export const page1 = {
@@ -50,7 +52,7 @@ export const page1 = {
       src: require('./static/icons/tabular.svg'),
       color: '#1890FF',
       shadowColor: 'rgba(15, 93, 166, 0.08)',
-      link: 'https://tobitran17-art.github.io/CO5177/tabular/',
+      link: appHref('/tabular/'),
     },
     {
       title: 'Text',

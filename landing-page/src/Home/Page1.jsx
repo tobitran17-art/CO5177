@@ -70,7 +70,8 @@ export default class Design extends React.PureComponent {
           <a
             className="page1-item-link"
             href={item.link}
-            target="_blank"
+            target={/^https?:\/\//.test(item.link) ? '_blank' : undefined}
+            rel={/^https?:\/\//.test(item.link) ? 'noopener noreferrer' : undefined}
             onMouseEnter={() => { this.onMouseOver(i); }}
             onMouseLeave={this.onMouseOut}
           >
