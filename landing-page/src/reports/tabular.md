@@ -23,12 +23,6 @@ Nhãn dương là `readmitted == "<30"`. Hai mức còn lại, `>30` và `NO`, l
 
 Tập ghi 10 năm chăm sóc nội trú tại 130 bệnh viện Hoa Kỳ. Mỗi dòng là một lần nhập viện, không phải một bệnh nhân. UCI đánh dấu giá trị thiếu bằng `?`.
 
-### Vì sao không dùng dữ liệu việc làm công nghệ 2026
-
-Stack Overflow đã công bố kết quả tổng hợp Developer Survey 2026 (khoảng 30.900 đáp viên, ngày 6/10/2026), nhưng file từng đáp viên chưa được phát hành. Các bản crawl tin tuyển dụng không có đường dẫn ổn định để chạy lại trên Colab. Tập bệnh viện này tải được ngay, có missing thật, có cột categorical, có cột numerical, và nhãn mất cân bằng.
-
-Mẫu EDA của giảng viên dùng Adult Income. Nhóm không dùng tập đó để tránh trùng mẫu minh họa.
-
 ## 3. Đối chiếu ràng buộc
 
 Đề bài yêu cầu ít nhất 2.000 dòng, ít nhất 10 cột, có giá trị thiếu, có cột categorical để encoding, có cột numerical để scaling, và ưu tiên tập khó.
