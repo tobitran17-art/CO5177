@@ -3,12 +3,24 @@ import rolesFigure from '../reports/figures/01-roles.png';
 import missingFigure from '../reports/figures/02-missing.png';
 import labelsFigure from '../reports/figures/03-labels.png';
 import patientsFigure from '../reports/figures/04-patients.png';
+import numericFigure from '../reports/figures/05-numeric.png';
+import demographicsFigure from '../reports/figures/06-demographics.png';
+import medsFigure from '../reports/figures/07-meds.png';
+import correlationFigure from '../reports/figures/08-correlation.png';
+import outliersFigure from '../reports/figures/09-outliers.png';
+import targetFigure from '../reports/figures/10-target.png';
 
 const figures = {
   'figures/01-roles.png': rolesFigure,
   'figures/02-missing.png': missingFigure,
   'figures/03-labels.png': labelsFigure,
   'figures/04-patients.png': patientsFigure,
+  'figures/05-numeric.png': numericFigure,
+  'figures/06-demographics.png': demographicsFigure,
+  'figures/07-meds.png': medsFigure,
+  'figures/08-correlation.png': correlationFigure,
+  'figures/09-outliers.png': outliersFigure,
+  'figures/10-target.png': targetFigure,
 };
 
 function parseInline(text, keyPrefix) {
