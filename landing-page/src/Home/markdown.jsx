@@ -9,6 +9,14 @@ import medsFigure from '../reports/figures/07-meds.png';
 import correlationFigure from '../reports/figures/08-correlation.png';
 import outliersFigure from '../reports/figures/09-outliers.png';
 import targetFigure from '../reports/figures/10-target.png';
+import textBalance from '../reports/figures/text-01-balance.png';
+import textLength from '../reports/figures/text-02-length.png';
+import textTerms from '../reports/figures/text-03-terms.png';
+import textWordcloud from '../reports/figures/text-04-wordcloud.png';
+import imageAttrs from '../reports/figures/image-01-attrs.png';
+import imageStampQr from '../reports/figures/image-02-stamp-qr.png';
+import imageLayout from '../reports/figures/image-03-layout.png';
+import imageBlocks from '../reports/figures/image-04-blocks.png';
 
 const figures = {
   'figures/01-roles.png': rolesFigure,
@@ -21,6 +29,14 @@ const figures = {
   'figures/08-correlation.png': correlationFigure,
   'figures/09-outliers.png': outliersFigure,
   'figures/10-target.png': targetFigure,
+  'figures/text-01-balance.png': textBalance,
+  'figures/text-02-length.png': textLength,
+  'figures/text-03-terms.png': textTerms,
+  'figures/text-04-wordcloud.png': textWordcloud,
+  'figures/image-01-attrs.png': imageAttrs,
+  'figures/image-02-stamp-qr.png': imageStampQr,
+  'figures/image-03-layout.png': imageLayout,
+  'figures/image-04-blocks.png': imageBlocks,
 };
 
 function parseInline(text, keyPrefix) {
