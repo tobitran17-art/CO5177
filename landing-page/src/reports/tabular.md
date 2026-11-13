@@ -1,10 +1,10 @@
-# Dữ liệu bảng — EDA
+# Dữ liệu bảng — EDA và mô hình
 
 **Nhóm T&D** · Trần Hữu Anh Triết (2470745), Ngô Minh Đại (2470722)
 
 **Học phần:** Nền tảng lập trình cho phân tích và trực quan dữ liệu · Học kỳ 261, năm học 2026–2027 · Giảng viên Lê Thành Sách
 
-Notebook hoàn tất EDA trên dữ liệu gốc: tổng quan, giá trị thiếu, cân bằng nhãn, phân phối, tương quan, outlier và nhãn theo ba đặc trưng. Chưa xử lý thiếu, chưa encoding, chưa scaling, chưa chia tập và chưa huấn luyện mô hình. Chạy được trên Google Colab: [notebooks/tabular_eda.ipynb](https://github.com/tobitran17-art/CO5177/blob/main/notebooks/tabular_eda.ipynb).
+Notebook hoàn tất EDA, chuẩn bị dữ liệu và so sánh mô hình Scikit-learn cho bài tái nhập viện trong 30 ngày. Chạy được trên Google Colab: [notebooks/tabular_eda.ipynb](https://github.com/tobitran17-art/CO5177/blob/main/notebooks/tabular_eda.ipynb).
 
 ## 1. Bài toán
 
@@ -170,11 +170,65 @@ Tỷ lệ `<30` trên toàn bộ tập là 11,2%, vẽ bằng đường đứt t
 
 **Kết luận.** `number_inpatient` gắn với nhãn mạnh nhất trong tám cột numerical (tương quan Pearson với nhãn nhị phân `<30` là 0,165). Tỷ lệ `<30` tăng từ 8,4% khi không nhập viện năm trước lên 30,7% khi nhập từ 4 lần trở lên, gấp 3,6 lần. Tuổi không tăng đơn điệu: nhóm `[20-30)` là 14,2% (1.657 dòng), cao hơn nhóm `[50-60)` là 9,7% (17.256 dòng). `time_in_hospital` yếu hơn: 1 ngày là 8,2% (14.208 dòng), ngày 10 là 14,3% (2.342 dòng), tương quan với nhãn chỉ 0,044. Thêm một điểm cho phần chuẩn bị dữ liệu: 1.642 dòng có `discharge_disposition_id` = 11 đều mang nhãn `NO`. Trong từ điển mã xuất viện của tập, mã 11 là Expired, nên những lần nhập viện này không thể tái nhập. Phần sau sẽ loại chúng trước khi huấn luyện; EDA chưa loại.
 
-## 13. Phần chưa làm
+## 13. Chuẩn bị dữ liệu
 
-- Bỏ `weight`; thêm mức "không xét nghiệm" cho `max_glu_serum` và `A1Cresult`; xử lý các cột thiếu còn lại.
-- Bỏ `examide` và `citoglipton`. Nhóm mã ICD-9 và `medical_specialty` trước khi encoding.
-- Loại lần xuất viện expired (`discharge_disposition_id` = 11) trước khi huấn luyện.
-- Encoding cột categorical và scaling cột numerical. Giữ các dòng số lần khám lệch phải, không xóa theo IQR.
-- Chia train, validation và test theo `patient_nbr`.
-- Huấn luyện và so sánh mô hình Scikit-learn, với recall hoặc F1 của lớp `<30`.
+Nhãn mô hình là nhị phân: dương khi `readmitted == "<30"`.
+
+- Bỏ 1.652 lần xuất viện expired (`discharge_disposition_id` 11, 19, 20). Còn 100.114 dòng, tỷ lệ `<30` là 11,3%.
+- Bỏ `weight`, `examide`, `citoglipton`, và 10 cột thuốc khác mức No ở dưới 0,1% dòng trên train.
+- `max_glu_serum` và `A1Cresult` thiếu được điền "Không xét nghiệm". `race`, `payer_code`, `medical_specialty` thiếu thành một mức riêng. Ba cột ICD-9 được gom thành nhóm bệnh.
+- Chia theo `patient_nbr`, 70% / 15% / 15%, stratify theo việc bệnh nhân có ít nhất một lần `<30`. Không bệnh nhân nào đứng ở hai tập.
+- Mã nhập viện, xuất viện, nguồn nhập và bên chi trả có dưới 200 dòng trên train được gom thành `Other`. `medical_specialty` giữ 10 chuyên khoa phổ biến nhất, phần còn lại là `Other`.
+- One-hot và `StandardScaler` chỉ fit trên train, ra 166 cột. Không xóa outlier IQR.
+
+| Tập | Số dòng | Số bệnh nhân | Tỷ lệ `<30` |
+| --- | --- | --- | --- |
+| Train | 70.280 | 49.307 | 11,3% |
+| Validation | 15.013 | 10.566 | 11,3% |
+| Test | 14.821 | 10.566 | 11,3% |
+
+![Hình 11. Phân phối trước và sau StandardScaler](figures/11-scale.png)
+
+**Kết luận.** Scale chỉ đổi đơn vị. Cột số lần nhập viện năm trước vẫn đầy số 0 sau scale, đúng quyết định không xóa các dòng này.
+
+## 14. So sánh mô hình
+
+Chỉ số để chọn mô hình là F1 của lớp `<30` trên validation. Accuracy không được dùng để chọn, vì lớp âm chiếm 88,7%.
+
+| Mô hình | Accuracy | Precision `<30` | Recall `<30` | F1 `<30` | ROC-AUC |
+| --- | --- | --- | --- | --- | --- |
+| Đa số (luôn không `<30`) | 0,887 | 0,000 | 0,000 | 0,000 | 0,500 |
+| Logistic | 0,887 | 0,568 | 0,012 | 0,024 | 0,668 |
+| Logistic, `class_weight` | 0,674 | 0,184 | 0,549 | 0,276 | 0,668 |
+| Logistic, ngưỡng 0,55 | 0,755 | 0,212 | 0,428 | 0,283 | 0,668 |
+| Random Forest | 0,675 | 0,187 | 0,560 | 0,281 | 0,670 |
+
+![Hình 12. So sánh mô hình trên tập validation](figures/12-models.png)
+
+**Kết luận.** Logistic không cân bằng có accuracy 88,7% nhưng recall lớp `<30` chỉ 1,2% và F1 2,4%. `class_weight='balanced'` đưa recall lên 54,9% và F1 lên 27,6%. F1 validation cao nhất là 28,3%, ở logistic cân bằng với ngưỡng 0,55. Ngưỡng này được chọn trên validation và không chỉnh lại trên test.
+
+## 15. Kết quả trên test
+
+Mô hình đã chọn là logistic cân bằng, ngưỡng 0,55.
+
+| Chỉ số | Test |
+| --- | --- |
+| Accuracy | 76,1% |
+| Precision `<30` | 21,3% |
+| Recall `<30` | 41,2% |
+| F1 `<30` | 28,1% |
+| ROC-AUC | 0,666 |
+
+![Hình 13. Confusion matrix trên tập test](figures/13-confusion.png)
+
+Trong 1.679 lần `<30` trên test, mô hình bắt được 691 và bỏ sót 988. Có 2.555 lần báo động giả. 10.587 lần không tái nhập sớm được dự đoán đúng.
+
+![Hình 14. Đặc trưng có hệ số lớn nhất](figures/14-importance.png)
+
+**Kết luận.** Trong các cột numerical, hệ số lớn nhất là `number_inpatient` (0,36): càng nhiều lần nhập viện năm trước thì xác suất `<30` càng cao, khớp EDA. Hệ số âm lớn của mã xuất viện 13 và 14 là nhóm hospice. Hệ số dương của mã 22 là chuyển cơ sở phục hồi. Lý do xuất viện tách hai nhóm bệnh nhân này rõ hơn số ngày nằm viện.
+
+## 16. Tổng kết
+
+Logistic không xử lý mất cân bằng gần như không tìm được lớp `<30`, dù accuracy trông cao. Cân bằng trọng số lớp làm recall tăng mạnh. F1 trên test vẫn 28,1% vì precision chỉ 21,3%: phần lớn ca được gắn nhãn tái nhập sớm là báo động giả. ROC-AUC 0,666 cho thấy tín hiệu có thật, nhưng chưa đủ để một ngưỡng vừa bắt được phần lớn ca tái nhập, vừa ít báo nhầm.
+
+Hạn chế: chưa thử mô hình phi tuyến sâu hơn Random Forest nông; một số mã xuất viện vẫn có hệ số one-hot lớn hơn cột số; ngưỡng 0,55 chỉ tối đa F1, chưa gắn với chi phí của một ca bỏ sót. Outlier của số lần khám được giữ, đúng với kết luận EDA.

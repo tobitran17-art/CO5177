@@ -9,6 +9,10 @@ import medsFigure from '../reports/figures/07-meds.png';
 import correlationFigure from '../reports/figures/08-correlation.png';
 import outliersFigure from '../reports/figures/09-outliers.png';
 import targetFigure from '../reports/figures/10-target.png';
+import scaleFigure from '../reports/figures/11-scale.png';
+import modelsFigure from '../reports/figures/12-models.png';
+import confusionFigure from '../reports/figures/13-confusion.png';
+import importanceFigure from '../reports/figures/14-importance.png';
 import textBalance from '../reports/figures/text-01-balance.png';
 import textLength from '../reports/figures/text-02-length.png';
 import textTerms from '../reports/figures/text-03-terms.png';
@@ -29,6 +33,10 @@ const figures = {
   'figures/08-correlation.png': correlationFigure,
   'figures/09-outliers.png': outliersFigure,
   'figures/10-target.png': targetFigure,
+  'figures/11-scale.png': scaleFigure,
+  'figures/12-models.png': modelsFigure,
+  'figures/13-confusion.png': confusionFigure,
+  'figures/14-importance.png': importanceFigure,
   'figures/text-01-balance.png': textBalance,
   'figures/text-02-length.png': textLength,
   'figures/text-03-terms.png': textTerms,
