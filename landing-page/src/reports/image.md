@@ -33,23 +33,23 @@ Hoá đơn render ra ảnh gần như **trắng** (độ bão hoà rất thấp 
 
 ![Hình 1. Tỉ lệ A4, độ bão hoà, mật độ điểm tối](figures/image-01-attrs.png)
 
-**Kết luận.** Đặc điểm "tài liệu nền trắng, tỉ lệ A4" giúp phân biệt với ảnh chụp giấy. `bpos_02` nhiều chữ hơn nên % điểm tối và số khối văn bản cao hơn.
+**Kết luận.** Đặc điểm "tài liệu nền trắng, tỉ lệ A4" giúp phân biệt với ảnh chụp giấy. % điểm tối gần bằng nhau ở hai mẫu (6,08% và 6,12%) dù số khối văn bản là 35 và 72, nên % điểm tối không đo được mật độ chữ; mật độ chữ đo bằng số khối.
 
 ## 5. Dấu chữ ký số và mã QR
 
-Phần mềm hoá đơn thường vẽ **con dấu chữ ký số màu xanh** và/hoặc **mã QR**.
+Phần mềm hoá đơn thường vẽ **con dấu chữ ký số màu xanh** và/hoặc **mã QR**. Hình 2 chỉ đo **diện tích** điểm ảnh màu xanh; Hình 3 ở mục 6 vẽ **vị trí** của vùng đó.
 
-![Hình 2. Tỉ lệ vùng dấu chữ ký số và sự hiện diện QR](figures/image-02-stamp-qr.png)
+![Hình 2. Diện tích điểm ảnh màu xanh và sự hiện diện QR](figures/image-02-stamp-qr.png)
 
-**Kết luận.** `bpos_01` có dấu chữ ký số (1,2% diện tích vùng xanh) và mã QR; `bpos_02` gần như không có vùng xanh và không QR. Ngay hai mẫu đã khác rõ → hai đặc trưng này hợp làm **tiêu chí gán nhãn** khi mở rộng tập.
+**Kết luận.** Chỉ nhìn diện tích thì tưởng `bpos_01` có dấu chữ ký số (1,21% điểm ảnh xanh) còn `bpos_02` không (0,06%). Hình 3 cho thấy ngược lại: hộp bao vùng xanh của `bpos_01` phủ 82% trang, tức là khung viền màu của mẫu hoá đơn; `bpos_02` có một vùng xanh nhỏ ở góc dưới phải. Diện tích màu xanh vì vậy không đủ làm nhãn "có chữ ký số". **QR** thì là đặc trưng có/không rõ ràng: `bpos_01` có, `bpos_02` không.
 
 ## 6. Bố cục khối văn bản
 
-Vẽ lại bản đồ khối từ toạ độ đã trích (không có nội dung chữ): ô xám là khối văn bản, khung xanh lá là vùng dấu chữ ký số, khung xanh dương là QR.
+Vẽ lại bản đồ khối từ toạ độ đã trích (không có nội dung chữ): ô xám là khối văn bản, khung xanh lá là hộp bao các điểm ảnh màu xanh (ứng viên dấu chữ ký số), khung xanh dương là QR.
 
 ![Hình 3. Bản đồ bố cục khối (không chứa nội dung chữ)](figures/image-03-layout.png)
 
-**Kết luận.** Cấu trúc hai hoá đơn gần giống nhau (khối tiêu đề ở trên, bảng hàng hoá ở giữa, tổng tiền và dấu chữ ký số ở dưới) → bố cục là đặc trưng ổn định cho mô hình.
+**Kết luận.** Vùng xanh của `bpos_01` là khung bao gần cả trang, không phải con dấu. `bpos_02` có vùng xanh nhỏ ở góc dưới phải (x = 0,76, y = 0,80), đúng chỗ dấu chữ ký số thường đặt. Nhận diện chữ ký số vì vậy phải xét vị trí và kích thước vùng xanh, không chỉ diện tích. Cấu trúc hai hoá đơn gần giống nhau (tiêu đề ở trên, bảng hàng hoá ở giữa, tổng tiền và chữ ký ở dưới) → vị trí khối là đặc trưng ổn định cho mô hình.
 
 ## 7. Phân phối khối văn bản
 
