@@ -17,6 +17,10 @@ import textBalance from '../reports/figures/text-01-balance.png';
 import textLength from '../reports/figures/text-02-length.png';
 import textTerms from '../reports/figures/text-03-terms.png';
 import textWordcloud from '../reports/figures/text-04-wordcloud.png';
+import textModels from '../reports/figures/text-05-models.png';
+import textConfusion from '../reports/figures/text-06-confusion.png';
+import textLeakage from '../reports/figures/text-07-leakage.png';
+import textNgrams from '../reports/figures/text-08-ngrams.png';
 import imageAttrs from '../reports/figures/image-01-attrs.png';
 import imageStampQr from '../reports/figures/image-02-stamp-qr.png';
 import imageLayout from '../reports/figures/image-03-layout.png';
@@ -41,6 +45,10 @@ const figures = {
   'figures/text-02-length.png': textLength,
   'figures/text-03-terms.png': textTerms,
   'figures/text-04-wordcloud.png': textWordcloud,
+  'figures/text-05-models.png': textModels,
+  'figures/text-06-confusion.png': textConfusion,
+  'figures/text-07-leakage.png': textLeakage,
+  'figures/text-08-ngrams.png': textNgrams,
   'figures/image-01-attrs.png': imageAttrs,
   'figures/image-02-stamp-qr.png': imageStampQr,
   'figures/image-03-layout.png': imageLayout,
